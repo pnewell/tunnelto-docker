@@ -1,4 +1,7 @@
 # Still [`tunnelto`](https://github.com/agrinman/tunnelto), but dockerized! :whale:
+
+### :warning: This repository has been archived because [tunnelto](https://github.com/agrinman/tunnelto) seems abandoned. :warning:
+
 <p>
   <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/backdevs/tunnelto-docker">
   <img alt="Docker Build Status" src="https://img.shields.io/docker/cloud/build/backdevs/tunnelto">
