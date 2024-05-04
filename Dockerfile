@@ -5,16 +5,18 @@ ENV TUNNELTO_VERSION=${VERSION}
 
 ENV DASHBOARD_PORT=8080
 
-ADD https://github.com/agrinman/tunnelto/releases/download/${TUNNELTO_VERSION}/tunnelto-linux.tar.gz /tmp/tunnelto.tar.gz
+ADD https://packagecloud.io/betacotech/tunnelto/packages/anyfile/tunnelto_armhf.zip/download?distro_version_id=230 /tmp/tunnelto_armhf.zip
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
         ca-certificates \
         tini \
+    && apt-get install unzip
     && rm -rf /var/lib/apt/lists/* \
 
-    && tar -xf /tmp/tunnelto.tar.gz -C /bin \
-    && rm /tmp/tunnelto.tar.gz
+    && unzip /tmp/tunnelto_armhf.zip \
+    && mv tunnelto_armhf tunnelto
+    && rm /tmp/tunnelto_armhf.zip
 
 COPY docker-entrypoint.sh /
 
