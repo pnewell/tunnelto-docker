@@ -13,7 +13,7 @@ RUN apt-get update \
         tini \
     && rm -rf /var/lib/apt/lists/* \
 
-    && tar -xf /tmp/tunnelto.tar.gz -C /${TUNNELTO_VERSION}/bin \
+    && tar -xf /tmp/tunnelto.tar.gz -C /0.1.18/bin \
     && rm /tmp/tunnelto.tar.gz
 
 COPY docker-entrypoint.sh /
