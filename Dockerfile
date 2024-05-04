@@ -13,9 +13,10 @@ RUN apt-get update \
         tini \
     && apt-get install unzip \
     && rm -rf /var/lib/apt/lists/* \
-    && umask 000 \
+    #&& umask 000 \
+    && apt install --reinstall coreutils \
     && unzip /tmp/tunnelto_armhf.zip \
-    #&& chmod 777 tunnelto_armhf \
+    && chmod 777 tunnelto_armhf \
     && mv tunnelto_armhf /bin/tunnelto \
     && rm /tmp/tunnelto_armhf.zip
 
