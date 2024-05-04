@@ -13,10 +13,10 @@ RUN apt-get update \
         tini \
     && apt-get install unzip \
     && rm -rf /var/lib/apt/lists/* \
-
-    && unzip /tmp/tunnelto_armhf.zip \
-    && chmod 777 tunnelto_armhf \
-    && mv tunnelto_armhf /bin/tunnelto \
+    && curl -s https://packagecloud.io/install/repositories/betacotech/tunnelto/script.anyfile.sh | sudo bash \
+    #&& unzip /tmp/tunnelto_armhf.zip \
+    #&& chmod 777 tunnelto_armhf \
+    #&& mv tunnelto_armhf /bin/tunnelto \
     && rm /tmp/tunnelto_armhf.zip
 
 COPY docker-entrypoint.sh /
