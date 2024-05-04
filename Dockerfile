@@ -16,8 +16,8 @@ RUN apt-get update \
     #&& umask 000 \
     #&& apt install --reinstall coreutils \
     && unzip /tmp/tunnelto_armhf.zip \
-    && mv /tmp/tunnelto_armhf /bin/tunnelto_armhf &&
-    find /bin/tunnelto_armhf -type f -exec chmod 755 \
+    && mv /tmp/tunnelto_armhf /bin/tunnelto_armhf \
+    && find /bin/tunnelto_armhf -type f -exec chmod 755 \
     #&& chmod 777 tunnelto_armhf \
     && rm /tmp/tunnelto_armhf.zip
 
