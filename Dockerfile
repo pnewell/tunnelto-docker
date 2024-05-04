@@ -15,7 +15,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
 
     && unzip /tmp/tunnelto_armhf.zip \
-    && mv tunnelto_armhf tunnelto \
+    && mv tunnelto_armhf /bin/tunnelto \
     && rm /tmp/tunnelto_armhf.zip
 
 COPY docker-entrypoint.sh /
