@@ -11,11 +11,11 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y \
         ca-certificates \
         tini \
-    && apt-get install unzip
+    && apt-get install unzip \
     && rm -rf /var/lib/apt/lists/* \
 
     && unzip /tmp/tunnelto_armhf.zip \
-    && mv tunnelto_armhf tunnelto
+    && mv tunnelto_armhf tunnelto \
     && rm /tmp/tunnelto_armhf.zip
 
 COPY docker-entrypoint.sh /
