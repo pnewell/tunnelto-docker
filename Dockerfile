@@ -15,10 +15,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     #&& umask 000 \
     && apt install --reinstall coreutils \
-    && unzip /tmp/tunnelto_armhf.zip \
-    && chmod 777 tunnelto_armhf \
-    && mv tunnelto_armhf /bin/tunnelto \
-    && rm /tmp/tunnelto_armhf.zip
+    && mv tunnelto_armhf.zip /bin/tunnelto.zip \
+    && cd /bin \
+    && unzip tunnelto_armhf.zip \
+    #&& chmod 777 tunnelto_armhf \
+    && rm tunnelto_armhf.zip
 
 COPY docker-entrypoint.sh /
 
