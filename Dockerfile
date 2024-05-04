@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 ARG VERSION=0.1.18
 ENV TUNNELTO_VERSION=${VERSION}
@@ -14,7 +14,7 @@ RUN apt-get update \
     && apt-get install unzip \
     && rm -rf /var/lib/apt/lists/* \
     && unzip /tmp/tunnelto_armhf.zip \
-    && chmod 777 tunnelto_armhf \
+    #&& chmod 777 tunnelto_armhf \
     && mv tunnelto_armhf /bin/tunnelto \
     && rm /tmp/tunnelto_armhf.zip
 
