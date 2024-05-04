@@ -18,7 +18,7 @@ RUN apt-get update \
     && mv /tmp/tunnelto_armhf.zip /bin/tunnelto_armhf.zip \
     && cd /bin \
     && unzip tunnelto_armhf.zip \
-    && mv /bin/tunnelto_armhf /bin/tunnelto \
+    #&& mv /bin/tunnelto_armhf /bin/tunnelto \
     #&& chmod 777 tunnelto_armhf \
     && rm tunnelto_armhf.zip
 
@@ -26,6 +26,6 @@ COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["tunnelto"]
+CMD ["tunnelto_armhf"]
 
 EXPOSE ${DASHBOARD_PORT}:${DASHBOARD_PORT}
