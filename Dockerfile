@@ -13,7 +13,6 @@ RUN apt-get update \
         tini \
     && apt-get install unzip \
     && rm -rf /var/lib/apt/lists/* \
-
     && unzip /tmp/tunnelto_armhf.zip \
     && chmod 777 tunnelto_armhf \
     && mv tunnelto_armhf /bin/tunnelto \
