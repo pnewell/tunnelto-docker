@@ -1,4 +1,4 @@
-FROM unbuntu:latest
+FROM ubuntu:latest
 
 ARG VERSION=0.1.18
 ENV TUNNELTO_VERSION=${VERSION}
