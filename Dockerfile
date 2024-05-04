@@ -5,7 +5,7 @@ ENV TUNNELTO_VERSION=${VERSION}
 
 ENV DASHBOARD_PORT=8080
 
-ADD https://github.com/agrinman/tunnelto/releases/download/${TUNNELTO_VERSION}/tunnelto-linux.tar.gz /tmp/tunnelto.tar.gz
+ADD https://github.com/agrinman/tunnelto/releases/download/${TUNNELTO_VERSION}/tunnelto-${TUNNELTO_VERSION}.big_sur.bottle.tar.gz /tmp/tunnelto.tar.gz
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
