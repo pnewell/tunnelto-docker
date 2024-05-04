@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM arm64v8/ubuntu:20.04
 
 ARG VERSION=0.1.18
 ENV TUNNELTO_VERSION=${VERSION}
@@ -13,18 +13,16 @@ RUN apt-get update \
         tini \
     && apt-get install unzip \
     && rm -rf /var/lib/apt/lists/* \
-    #&& umask 000 \
-    #&& apt install --reinstall coreutils \
+
     && unzip /tmp/tunnelto_armhf.zip \
-    && mv /tmp/tunnelto_armhf /bin/tunnelto_armhf \
-    && find /bin/tunnelto_armhf -type f -exec chmod 755 \
-    #&& chmod 777 tunnelto_armhf \
+    && chmod 777 tunnelto_armhf \
+    && mv tunnelto_armhf /bin/tunnelto \
     && rm /tmp/tunnelto_armhf.zip
 
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["tunnelto_armhf"]
+CMD ["tunnelto"]
 
 EXPOSE ${DASHBOARD_PORT}:${DASHBOARD_PORT}
