@@ -12,8 +12,9 @@ RUN apt-get update \
         ca-certificates \
         tini \
     && apt-get install unzip \
+    && apt-get install curl \
     && rm -rf /var/lib/apt/lists/* \
-    && curl -s https://packagecloud.io/install/repositories/betacotech/tunnelto/script.anyfile.sh | sudo bash \
+    && curl -s https://packagecloud.io/install/repositories/betacotech/tunnelto/script.anyfile.sh | bash \
     #&& unzip /tmp/tunnelto_armhf.zip \
     #&& chmod 777 tunnelto_armhf \
     #&& mv tunnelto_armhf /bin/tunnelto \
